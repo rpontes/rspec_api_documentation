@@ -7,6 +7,7 @@ module RspecApiDocumentation
         @example = example
         @host = configuration.curl_host
         @filter_headers = configuration.curl_headers_to_filter
+        @path_html_links = configuration.path_html_links
         self.template_path = configuration.template_path
       end
 
@@ -20,6 +21,10 @@ module RspecApiDocumentation
 
       def dirname
         resource_name.to_s.downcase.gsub(/\s+/, '_').gsub(":", "_")
+      end
+
+      def path_link
+        @path_html_links.present? ? @path_html_links : ''
       end
 
       def filename

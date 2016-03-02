@@ -83,6 +83,9 @@ module RspecApiDocumentation
     # renamed to request_body_formatter. here for backwards compatibility
     add_setting :post_body_formatter, :default => nil
 
+    # configuration to add another path on links on index
+    add_setting :path_html_links, default: nil
+
     # Change how the post body is formatted by default, you can still override by `raw_post`
     # Can be :json, :xml, or a proc that will be passed the params
     #
